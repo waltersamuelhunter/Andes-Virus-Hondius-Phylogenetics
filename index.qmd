@@ -33,19 +33,18 @@ p
 
 
 
-
 # Consistency of placement across various placements
 
 ```{r}
 
-source("scripts/S_M_L_andes_phylogenetic_consistency.R")
+#source("scripts/S_M_L_andes_phylogenetic_consistency.R")
 
 
 ```
 
 ```{r}
 
-source("scripts/outbreak_lineage_snp_analysis.R")
+#source("scripts/outbreak_lineage_snp_analysis.R")
 
 
 ```

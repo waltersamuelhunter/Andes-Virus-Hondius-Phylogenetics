@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "andv-hondius-2026",
+    "title": "Phylogenetic Analysis of Hantavirus Andes MV Hondius Cruise Outbreak in April - May 2026",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Phylogenetic placement across Orthohantavirus taxa\n\n\n\n\n\n\n\n\nFigure 1: Phylogenetic placement of Outbreak Strain Within Hantavirus Taxonomy\n\n\n\n\n\n\n\nConsistency of placement across various placements\n\n\nShow the R Code\n#source(\"scripts/S_M_L_andes_phylogenetic_consistency.R\")\n\n\n\n\nShow the R Code\n#source(\"scripts/outbreak_lineage_snp_analysis.R\")"
   },
   {
     "objectID": "about.html",
