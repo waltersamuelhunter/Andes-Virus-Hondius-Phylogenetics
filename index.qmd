@@ -1,0 +1,51 @@
+---
+title: "Phylogenetic Analysis of Hantavirus Andes MV Hondius Cruise Outbreak in April - May 2026"
+date: 13/05/2026
+format: 
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-location: left
+    code-fold: true
+    code-summary: "Show the R Code"
+    self-contained: true
+---
+
+# Phylogenetic placement across Orthohantavirus taxa
+
+```{r}
+#| label: fig-diverse-hanta
+#| fig-cap: "Phylogenetic placement of Outbreak Strain Within Hantavirus Taxonomy"
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 20
+#| fig-width: 12
+
+library(here)
+
+source(here("scripts", "hantavirus_diverse_species_phylogeny.R"))
+
+p
+
+```
+
+
+
+
+# Consistency of placement across various placements
+
+```{r}
+
+source("scripts/S_M_L_andes_phylogenetic_consistency.R")
+
+
+```
+
+```{r}
+
+source("scripts/outbreak_lineage_snp_analysis.R")
+
+
+```
