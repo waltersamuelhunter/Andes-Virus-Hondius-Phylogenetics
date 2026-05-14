@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Phylogenetic Analysis of Hantavirus Andes MV Hondius Cruise Outbreak in April - May 2026",
     "section": "",
-    "text": "Phylogenetic placement across Orthohantavirus taxa\n\n\n\n\n\n\n\n\nFigure 1: Phylogenetic placement of Outbreak Strain Within Hantavirus Taxonomy\n\n\n\n\n\n\n\nConsistency of placement across various placements\n\n\nShow the R Code\n#source(\"scripts/S_M_L_andes_phylogenetic_consistency.R\")\n\n\n\n\nShow the R Code\n#source(\"scripts/outbreak_lineage_snp_analysis.R\")"
+    "text": "Both WHO AND ECDC has been notified regarding a potential outbreak starting in April on MV Hondius cruise, that departed from South America and was on its way towards Europe on the Atlantic Ocean. Patient zero, died onboard ship on 11.04. Two additional deaths have occured, including wife of patient zero and a German woman.The third case . Currently, 6 cases have been laboratory confirmed as Hantavirus andes infection, the only species within Orthohantavirus genus with previous evidence of ability to human - human transmission. One of the passengers, British national has been evacuated to South Africa in critical condition and on 2.05 PCR test of his sample result came positive, pointing to potential outbreak. This mobilized South African authorities to test the wife of index patient body. The test also returned positive and on 4.05 WHO declared an outbreak. As of 13.05, all patients have been removed from the ship and repatriated. The current status is 8 confirmed cases, two possible, 1 inconclusive and 3 deaths [1-4].\nAfter just 6 days after of first PCR result and 4 days after declaring an outbreak, first sequence has been publically released, from a Swiss resident that traveled the MV Hondius cruise [5]. So far, sequences of 5 isolates have been released and apart from Swiss isolate also include sequences from South African (n = 2) and Netherlands (n = 2) [6].\nThe aim of the phylogenetic analysis here is to characterize the strains isolated during the outbreak, assess their relatedness, estimate TMRCA, as well as identify potential adaptive mutations that could be associated with transmissibility."
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,19 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#methods",
+    "href": "index.html#methods",
+    "title": "Phylogenetic Analysis of Hantavirus Andes MV Hondius Cruise Outbreak in April - May 2026",
+    "section": "Methods",
+    "text": "Methods\nFirst, to assess identity taxonomy of the Hantavirus isolates, phylogenetic placement was performed within broad variety of Orthohantavirus species, including members of old world Hantaviruses (Murinae such as Seoul virus, Arvicolinae such as Puumala virus). Strains were selected based on list specified charactarized previously by Jonsson et al [7]. The taxonomy was verified with virological taxonomy [8]. In the species specified in table 1 of [7], did not match ICTV classifical. For example some of the species such as Calabazo, there was no official ICTV classfication. Further, several species have been reclassfied. For instance, Rio Segundo virus taxa has been abolished after 2015. Also, some of the species were merged into single taxonomy, such as Bermejo virus, Pergamino virus, Lechiguanas virus, Maciel virus, Oran virus, Laguna Negra virus, Araraquara virus, Juquitiba virus which are all members of Ortohantavirus andense taxa. Selecion of strains was guided by self-determining rules: include representatives of both Old and New World Hantavirus taxa, strains with complete M segment sequence in Genbank category of NCBI virus were selected. If there was more than 1 sequence available for species, 2 sequences were selected, from different geographical locations, if possbible. For Orthohantavirus andes, 3 sequences were retrieved, one being an oubtreak strain. Upon selection, sequences were retried from NCBI virus in multi fasta format, as well as corresponding metadata in csv format. Sequences were aligned using MAFFT v7.526 [9] with –auto flag. Phylogenetic tree was inferred with IQTREE v3.1.1 [10] with multiple sequence alignment as input, while specifying -m MFP for sequence evolution model finding and -B 10000 for number of ultrafast bootrastraps. Phylogenetic tree was then visualized in R (Figure 1)."
+  },
+  {
+    "objectID": "index.html#result",
+    "href": "index.html#result",
+    "title": "Phylogenetic Analysis of Hantavirus Andes MV Hondius Cruise Outbreak in April - May 2026",
+    "section": "Result",
+    "text": "Result\nThe outbreak strain have been placed within Orthohantavirus andes species, with high clade bootstrap support value (97%), supporting the initial findings regarding the species of outbreak isolate [5].\n\n\n\n\n\n\n\n\nFigure 1: Phylogenetic placement of Outbreak Strain Within Hantavirus Taxonomy"
   }
 ]

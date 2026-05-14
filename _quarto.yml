@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Andes Virus Hondius Phylodynamics"
+  title: "Hantavirus MV Hondius Cruise Phylogenetic Analysis"
   navbar:
     left:
       - href: index.qmd
