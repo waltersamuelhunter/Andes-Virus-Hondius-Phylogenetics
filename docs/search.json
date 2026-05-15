@@ -39,6 +39,6 @@
     "href": "index.html#results",
     "title": "Phylogenetic Analysis of Hantavirus Andes MV Hondius Cruise Outbreak in April - May 2026",
     "section": "Results",
-    "text": "Results\n\nOrthohantavirus andense phylogeny"
+    "text": "Results\n\nSegment SSegment MSegment L\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConsistency of placement across various placements\n\n\n\n\n\n\n\n\n\n\n\nShow the R Code\n#source(\"scripts/outbreak_lineage_snp_analysis.R\")"
   }
 ]

@@ -48,41 +48,17 @@ p
 
 ```
 
-# Phylogenetic placement within M
-
+# Phylogenetic placement within Orthohantavirus andense phylogeny
 
 ## Methods
 
 ## Results
 
-### Orthohantavirus andense phylogeny 
 
-
-
-# My Andes Virus Phylogeny Results
-
-Here are the time-calibrated trees for all three segments:
 
 ::: {.panel-tabset}
 
-
-## Segment S
-
-```{r}
-#| file: "scripts/M_86seq_phylogeny_visualization.R"
-#| warning: false
-#| message: false
-#| result: false
-#| echo: false
-#| fig-height: 12
-#| fig-weight: 8
-
-p
-
-
-```
-
-## Segment S
+### Segment S
 
 ```{r}
 #| file: "scripts/S_102seq_phylogeny_visualization.R"
@@ -98,7 +74,25 @@ p
 
 ``` 
 
-## Segment L
+### Segment M
+
+```{r}
+#| file: "scripts/M_86seq_phylogeny_visualization.R"
+#| warning: false
+#| message: false
+#| result: false
+#| echo: false
+#| fig-height: 12
+#| fig-weight: 8
+
+p
+
+
+```
+
+
+
+### Segment L
 
 ```{r}
 #| file: "scripts/L_76seq_phylogeny_visualization.R"
