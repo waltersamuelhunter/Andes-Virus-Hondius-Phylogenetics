@@ -48,7 +48,74 @@ p
 
 ```
 
-# Consistency of placement across various placements
+# Phylogenetic placement within M
+
+
+## Methods
+
+## Results
+
+### Orthohantavirus andense phylogeny 
+
+
+
+# My Andes Virus Phylogeny Results
+
+Here are the time-calibrated trees for all three segments:
+
+::: {.panel-tabset}
+
+
+## Segment S
+
+```{r}
+#| file: "scripts/M_86seq_phylogeny_visualization.R"
+#| warning: false
+#| message: false
+#| result: false
+#| echo: false
+#| fig-height: 12
+#| fig-weight: 8
+
+p
+
+
+```
+
+## Segment S
+
+```{r}
+#| file: "scripts/S_102seq_phylogeny_visualization.R"
+#| message: false
+#| warning: false
+#| results: false
+#| echo: false
+#| fig-height: 12
+#| fig-weight: 8
+
+p
+
+
+``` 
+
+## Segment L
+
+```{r}
+#| file: "scripts/L_76seq_phylogeny_visualization.R"
+#| message: false
+#| warning: false
+#| results: false
+#| echo: false
+#| fig-height: 12
+#| fig-weight: 8
+
+p
+
+```
+
+:::
+
+### Consistency of placement across various placements
 
 ```{r}
 #| echo: false
@@ -60,6 +127,7 @@ p
 
 
 source("scripts/S_M_L_andes_phylogenetic_consistency_master.R")
+
 final_output
 
 ```
