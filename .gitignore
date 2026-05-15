@@ -26,6 +26,8 @@ andv-hondius-2026.Rproj
 /renv/python/
 
 # Build outputs
-docs/
 /*.tar.gz
 /*.Rcheck/
+
+data/
+scripts/
