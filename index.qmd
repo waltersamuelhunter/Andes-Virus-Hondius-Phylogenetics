@@ -36,6 +36,7 @@ The outbreak strain have been placed within Orthohantavirus andes species, with 
 #| echo: false
 #| message: false
 #| warning: false
+#| results: false
 #| fig-height: 20
 #| fig-width: 12
 
@@ -50,8 +51,15 @@ p
 # Consistency of placement across various placements
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| results: false
+#| fig-height: 20
+#| fig-width: 12
 
-source("scripts/S_M_L_andes_phylogenetic_consistency.R")
+
+source("scripts/S_M_L_andes_phylogenetic_consistency_master.R")
 final_output
 
 ```
