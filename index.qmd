@@ -14,11 +14,11 @@ format:
 
 # Introduction
 
-Both WHO AND ECDC has been notified regarding a potential outbreak starting in April on MV Hondius cruise, that departed from South America and was on its way towards Europe on the Atlantic Ocean. Patient zero, died onboard ship on 11.04. Two additional deaths have occured, including wife of patient zero and a German woman.The third case . Currently, 6 cases have been laboratory confirmed as Hantavirus andes infection, the only species within Orthohantavirus genus with previous evidence of ability to human - human transmission. One of the passengers, British national has been evacuated to South Africa in critical condition and on 2.05 PCR test of his sample result came positive, pointing to potential outbreak. This mobilized South African authorities to test the wife of index patient body. The test also returned positive and on 4.05 WHO declared an outbreak. As of 13.05, all patients have been removed from the ship and repatriated. The current status is 8 confirmed cases, two possible, 1 inconclusive and 3 deaths \[1-4\].
+Both WHO AND ECDC has been notified regarding a potential outbreak starting in April on MV Hondius cruise, that departed from South America and was on its way towards Europe on the Atlantic Ocean. Patient zero, died onboard ship on 11.04. Two additional deaths have occurred, including wife of patient zero and a German woman. Currently, 6 cases have been laboratory confirmed as Hantavirus andes infection, the only species within Orthohantavirus genus with previous evidence of ability to human - human transmission. One of the passengers, British national has been evacuated to South Africa in critical condition and on 2.05 PCR test for Hantavirus of his sample result came positive, pointing to potential outbreak. This mobilized South African authorities to test the wife of index patient body. The test also returned positive and on 4.05 WHO declared an outbreak. As of 13.05, all patients have been removed from the ship and repatriated. The current status is 8 confirmed cases, two possible, 1 inconclusive and 3 deaths \[1-4\].
 
-After just 6 days after of first PCR result and 4 days after declaring an outbreak, first sequence has been publically released, from a Swiss resident that traveled the MV Hondius cruise \[5\]. So far, sequences of 5 isolates have been released and apart from Swiss isolate also include sequences from South African (n = 2) and Netherlands (n = 2) \[6\].
+After just 6 days upon first PCR result and 4 days after declaring an outbreak, first sequence has been publicaly released, from a Swiss resident that traveled the MV Hondius cruise \[5\]. So far, sequences of 5 isolates have been released and apart from Swiss isolate also include sequences from South African (n = 2) and Netherlands (n = 2) \[6\].
 
-The aim of the phylogenetic analysis here is to characterize the strains isolated during the outbreak, assess their relatedness, estimate TMRCA, as well as identify potential adaptive mutations that could be associated with transmissibility.
+The aim of the phylogenetic analysis here is to characterize the strains isolated during the outbreak, assess their relatedness, estimate tMRCA, as well as identify potential adaptive mutations that could be associated with transmissibility or other features enhancing fitness of virus.
 
 # Phylogenetic placement across Orthohantavirus taxa
 
@@ -28,7 +28,7 @@ First, to assess identity taxonomy of the Hantavirus isolates, phylogenetic plac
 
 ## Result
 
-The outbreak strain have been placed within Orthohantavirus andes species, with high clade bootstrap support value (97%), supporting the initial findings regarding the species of outbreak isolate \[5\].
+The outbreak strain have been placed within Orthohantavirus andes species, with high clade bootstrap support value (97%) @fig-diverse-hanta, supporting the initial findings regarding the species of outbreak isolate \[5\].
 
 ```{r}
 #| label: fig-diverse-hanta
@@ -52,7 +52,16 @@ p
 
 ## Methods
 
+  For phylogenetic analysis at the Orthohantavirus andes species level, sequences were retrieved from pathoplexus portal [6], for segment S, M and L. Sequences were filtered based on the known length range of each segment according to [11]. To account for variation, introduced during sequencing we allowed variation of +- 200 bp for each of the segmenty, which resulted in following length filtering criteria: S - 1.6-2.3 kb, M - 3.5-4 kb, L - 6.3-6.8 kb. Ultimately, 102, 87 and 76 sequences were obtained for segment S, M and L, respectively (accessed on 15.05.2026), in a raw multi fasta format. The sequences were aligned with MAFFT [9], with --maxiterate 1000 and --localpair parameters, followed by manual trimming in MEGA12 [12], to remove uneven 5' and 3' ends as well as grouped sites that have gaps in most of the sequences. PP_006W1UB.1 sequence was removed from M segment alignment due to significant amount of unknown nucleotides (N). After trimming, phylogenetic reconstruction was performed with IQTREE3 (10) for each segment alignment, with GTR+F+R2 sequence evolutionary model (best fit model, estimated by model finder), with 10000 ultrabootstraps. Phylogenetic trees were visualized in R.
+
+
+
 ## Results
+
+  The placement with sister clade is consistent across S, M, L segments @fig-andes-phylogeny-s, @fig-andes-phylogeny-m, @fig-andes-phylogeny-l, @fig-andes-phylogeny-consistency, supporting no evidence of recombination, between different strains of Orthohantavirus andes. 
+  Outbreak samples (n = 5) form a monophylethic clade consisting of highly similar sequences, supporting possibility of single spillover event or multiple spillovers over short period of time (infection from common source). The most closely related sequences are: PP_006VZ4W.1 and PP_006VZ5U.1 , which correspond to NRC-3/18 and NRC-4/18, two cases from San Martin de Los (Andes, Neuquen, Argentina, near border with Chile) from 2018. San Martin de Los is located approximately by 2350 km road distance from Ushuaia, a location where cruise departed from, and even further from the islands where cruise stopped and where spillover also could potentially occur. 
+  Currently, there are no sequences, either from rodent or human Hantavirus andes isolates from southern Chile, Argentina or the islands where cruise stopped.   
+  This highlights limited knowledge of Hantavirus andes phylogeography and therefore limited ability to answer the question of spatial origin of spillover, with currently available data. 
 
 
 
@@ -61,7 +70,8 @@ p
 ### Segment S
 
 ```{r}
-#| file: "scripts/S_102seq_phylogeny_visualization.R"
+#| label: fig-andes-phylogeny-s
+#| fig-cap:  "Phylogenetic placement of outbreak strains within Orthohantavirus andes, segment S"
 #| message: false
 #| warning: false
 #| results: false
@@ -69,6 +79,8 @@ p
 #| fig-height: 12
 #| fig-weight: 8
 
+
+source("scripts/S_102seq_phylogeny_visualization.R")
 p
 
 
@@ -77,7 +89,8 @@ p
 ### Segment M
 
 ```{r}
-#| file: "scripts/M_86seq_phylogeny_visualization.R"
+#| label: fig-andes-phylogeny-m
+#| fig-cap:  "Phylogenetic placement of outbreak strains within Orthohantavirus andes, segment M"
 #| warning: false
 #| message: false
 #| result: false
@@ -85,6 +98,7 @@ p
 #| fig-height: 12
 #| fig-weight: 8
 
+source("scripts/M_86seq_phylogeny_visualization.R")
 p
 
 
@@ -95,44 +109,474 @@ p
 ### Segment L
 
 ```{r}
-#| file: "scripts/L_76seq_phylogeny_visualization.R"
+#| label: fig-andes-phylogeny-l
+#| fig-cap:  "Phylogenetic placement of outbreak strains within Orthohantavirus andes, segment L"
 #| message: false
 #| warning: false
 #| results: false
 #| echo: false
 #| fig-height: 12
-#| fig-weight: 8
+#| fig-weight: 12
+
+
+source("scripts/L_76seq_phylogeny_visualization.R")
 
 p
 
 ```
 
-:::
+
 
 ### Consistency of placement across various placements
+
+```{r}
+#| label: fig-andes-phylogeny-consistency
+#| fig-cap:  "Consistency of phylogenetic placement within Ortohantavirus andes, across segments"
+#| echo: false
+#| message: false
+#| warning: false
+#| results: false
+#| fig-height: 8
+#| fig-width: 12
+
+
+source("scripts/S_M_L_andes_phylogenetic_consistency_master.R")
+final_output
+
+```
+
+:::
+
+# SNP distance 
+
+## Methods
+
+The trimmed alignment for each of the segments was used to derive pairwise SNP distances between all outbreak samples and sister clade samples. SNP distances were obtained with dist.dna function (R, package: ape). Networks were generated with graph_from_data_frame function (R, package: igraph). 
+
+
+
+## Results
+
+SNP distance between outbreak strains and sister clade were equal to 22 SNPs for segment S @tbl-snp-distance-s, 35-36 SNPs for segment M @tbl-snp-distance-m and 73-80 SNPs for segment L @tbl-snp-distance-l.
+When comparing outbreak strains, there were no mutations found in segment S @snp-network-s. For M segment 2 SNPs were found differ: between PP_006W6RC.2 and every other strain in outbreak @snp-network-m, consistent with branching above that isolate visible in phylogenetic tree @fig-andes-phylogeny-consistency, suggesting 2 mutations occurred on the stem branch leading to the the clade containing the rest of outbreak isolates (PP_006WDKH.1, PP_006WBLH.2, PP_006W3U9.2, PP_006WDJK.1) 
+For the segment L, the SNP distance between outbreak strains varies between 0-2 SNPs. The most basal isolates: PP_006WDJK.1 and PP_006WDKH.1 were found to differ by 1 SNP. PP_006W6RC.2 and PP_006W3U9.2 were found to differ by 1 SNP. PP_006W3U9.2 and PP_006WBLH.2 also differ by 1 SNP, while PP_006W6RC.2 and PP_006WBLH.2 have no differences in SNPs @snp-network-l.
+
+
+::: {.panel-tabset}
+
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 #| results: false
-#| fig-height: 20
-#| fig-width: 12
 
-
-source("scripts/S_M_L_andes_phylogenetic_consistency_master.R")
-
-final_output
+source("scripts/S_M_L_snp_distance_betwen_outbreak_and_sister_clade.R")
 
 ```
+
+### S
+
+```{r}
+#| label: tbl-snp-distance-s
+#| fig-cap:  "SNP distance between outbreak and sister clade strains - segment S"
+#| echo: false
+#| message: false
+#| warning: false
+
+kable(snp_matrix_list[[1]], 
+      caption = "SNP distance between outbreak and sister clade samples: S segment")
+
+```
+
+### M
+
+```{r}
+#| label: tbl-snp-distance-m
+#| fig-cap:  "SNP distance between outbreak and sister clade strains - segment M"
+#| echo: false
+#| message: false
+#| warning: false
+
+kable(snp_matrix_list[[2]], 
+      caption = "SNP distance between outbreak and sister clade samples: M segment")
+
+``` 
+
+### L
+
+```{r}
+#| label: tbl-snp-distance-l
+#| fig-cap:  "SNP distance between outbreak and sister clade strains - segment L"
+#| echo: false
+#| message: false
+#| warning: false
+
+
+kable(snp_matrix_list[[3]], 
+      caption = "SNP distance between outbreak and sister clade samples: L segment")
+
+
+#(mutation and then reverse mutation?) 
+
+```
+
+### SNP distance network of outbreak strain - S segment
+
+```{r}
+#| label: snp-network-s
+#| fig-cap:  "Relatedness network of outbreak strains based on SNP distances, segment S"
+#| echo: false
+#| message: false
+#| warning: false
+
+
+source("scripts/S_snp_distance_network_outbreak_strains.R")
+
+plot_S
+
+```
+
+### SNP distance network of outbreak strain - M segment
+
+```{r}
+#| label: snp-network-m
+#| fig-cap:  "Relatedness network of outbreak strains based on SNP distances, segment M"
+#| echo: false
+#| message: false
+#| warning: false
+
+source("scripts/M_snp_distance_network_outbreak_strains.R")
+plot_M
+
+```
+
+
+### SNP distance network of outbreak strain - L segment
+
+```{r}
+#| label: snp-network-l
+#| fig-cap:  "Relatedness network of outbreak strains based on SNP distances, segment L"
+#| echo: false
+#| message: false
+#| warning: false
+
+source("scripts/L_snp_distance_network_outbreak_strains.R")
+plot_L
+
+```
+
+:::  
+
+# Molecular clock analysis
+
+## Methods
+
+For molecular dating, sequences were re-downloaded from pathoplexus [6], including only ones having collection date available between 1995-01-01 and 2026-05-06, within length range: S - 1.6-2.3 kb, M - 3.5-4 kb,  L - 6.3-6.8 kb. 38, 30 and 27 sequences were obtained for segment S, M and L, respectively. 
+Sequences were aligned with mafft [9], specifying --maxiterate 1000 and --localpair  parameters and the alignments were manually trimmed in MEGA12 [12] to remove 5' and 3' ragged ends. Blocks of missing sites within sequence alignment were removed. Sites with missing gaps for most or all sequences in alignment were also removed. Sequences PP 006W1TD.1|M, PP 006W1UB.1|M and PP_006W6RC.2|L were removed due to abudance of unknown base calls (Ns). Phylogenies were reconstructed using IQTREE3 [10], with -B 10000 and -m MFP. Tip dating was performed with treetime [13], specifying following parameters: --confidence, --max-iter 100, --reroot least-squares --gtr infer. We run time calibration multiple times with different parameters specified for different clock models (--relax 1.0 0 for uncorrelated relaxed clock, --relax 1.0 1.0 for correlated relaxed clock and no flag specified for strict clock) and coalescence models (--coalescent opt for costant, --coalescent skyline for skyline or no parameter specified). We estimated lower and upper bounds of tMRCA for the outbreak strains. 
+
+## Results
+
+The dates spanned from 1996 to 2026 for segment S and from 1997 to 2026, for segments M and 1997 to 2026 for segment L. Root to tip regression analysis results indicated temporal signal in segment S @fig-rtt-S and segment M @fig-rtt-M datasets, while segment L @fig-rtt-L lacked measurable evolutionary signal. The estimated evolutionary rates was 3.480e-03 for segment S and 1.446e-03 for segment M, which correspond to 5.99 SNP per genome segment (0.00348 substitution per site x 1723 sites in alignment) and 5.06 SNP (0.001446 substitutions per site x 3501 sites), for segment S and M respectively @tbl-evol-rate. The obtained evolutionary rate values are consistent with known substitution rate ranges for Orthohantavirus andes [14]. The lower bound of tMRCA for segment S varies from 2009 to 2021 @tbl-tmrca-s and from 2010 to 2016 for segment M @tbl-tmrca-M, depending on the model, while the upper bound is same for segment S (2026-04-25) despite model selected @tbl-tmrca-s, and varies from 2026-03-10 to 2026-03-25 for segment M, depending on the coalescent and clock model combination  @tbl-tmrca-M. Given the characteristics of Hantavirus andes biology, which is characterized by incubation period ranging from 9 to 40 days, [15] with median of human-to-human incubation period of 20.1 days and 18.3 days rodent-to-human incubation period [16], the lower bound is too far in the past to be epidemiologicaly informative for this particular spillover event. The upper bound for segment M point out to March 2026, which considering infection biology of Hantavirus andes, is consistent with the time of symptom onset for probable patient zero which was on April 3 and history of 3-month travel in Argentina and Chile, prior to the boarding cruise [17]. 
+
+
+::: {.panel-tabset}  
+
+##### Temporal Signal Assessment - S segment
+
+```{r}
+#| label: fig-rtt-S
+#| fig-cap: "Root to tip regresssion analysis results for Segment S"
+#| fig-align: center
+#| out-width: "80%"
+#| echo: false
+#| message: false
+#| warning: false
+
+
+# 1. Define the input PDF
+my_pdf <- "data/time_calibration/mol_clock/S_38seq_time_cal/root_to_tip_regression.pdf"
+
+# 2. Define the exact output location and name for the PNG
+my_png <- "data/time_calibration/mol_clock/S_38seq_time_cal/root_to_tip_regression.png"
+
+# 3. Convert it, forcing it to save at our specific 'my_png' path
+invisible(pdftools::pdf_convert(my_pdf, format = "png", dpi = 300, filenames = my_png, verbose = FALSE))
+
+# 4. Embed the image
+knitr::include_graphics(my_png)
+
+```
+
+##### Temporal Signal Assessment - M segment
+
+```{r}
+#| label: fig-rtt-M
+#| fig-cap: "Root to tip regression analysis results for segment M"
+#| fig-align: center
+#| out-width: "80%"
+#| echo: false
+#| message: false
+#| warning: false
+
+
+# 1. Define the input PDF
+my_pdf <- "data/time_calibration/mol_clock/M_28_time_cal/root_to_tip_regression.pdf"
+
+# 2. Define the exact output location and name for the PNG
+my_png <- "data/time_calibration/mol_clock/M_28_time_cal/root_to_tip_regression.png"
+
+# 3. Convert it, forcing it to save at our specific 'my_png' path
+invisible(pdftools::pdf_convert(my_pdf, format = "png", dpi = 300, filenames = my_png, verbose = FALSE))
+
+# 4. Embed the image
+knitr::include_graphics(my_png)
+
+
+
+
+```
+##### Temporal Signal Assessment - L segment
+
+```{r}
+#| label: fig-rtt-L
+#| fig-cap: "Root to tip regression analysis results for segment L"
+#| fig-align: center
+#| out-width: "80%"
+#| echo: false
+#| message: false
+#| warning: false
+
+
+# 1. Define the input PDF
+my_pdf <- "data/time_calibration/mol_clock/L_26seq_time_cal/root_to_tip_regression.pdf"
+
+# 2. Define the exact output location and name for the PNG
+my_png <- "data/time_calibration/mol_clock/L_26seq_time_cal/root_to_tip_regression.png"
+
+# 3. Convert it, forcing it to save at our specific 'my_png' path
+invisible(pdftools::pdf_convert(my_pdf, format = "png", dpi = 300, filenames = my_png, verbose = FALSE))
+
+# 4. Embed the image
+knitr::include_graphics(my_png)
+
+
+
+```
+
+##### Molecular clock estimates
+
+```{r}
+#| label: tbl-evol-rate
+#| tbl-cap: "Evolutionary rate estimates for each segment"
+#| echo: false
+#| message: false
+#| warning: false
+
+molecular_clock_estimates <- data.frame(Segment = c("S", "M", "L"),                                        RootToTipDistance = c("3.480e-03", "1.446e-03", "No temporal signal"), 
+SNPs_Per_Genome_Segment = "5.99", "5.06", "No Temporal Signal",                                        
+CorrCoefficient = c("0.19", "0.21", "0.00"))
+
+knitr::kable(molecular_clock_estimates)
+
+```
+
+
+
+##### Time calibrated phylogeny and tMRCA - segment S
+
+```{r}
+#| label: fig-dated-phylogeny-S
+#| fig-cap: "Time Calibrated Phylogenetic Tree for segment S"
+#| echo: false
+#| message: false
+#| warning: false
+
+source("scripts/S_38seq_time_calibrated_phylogeny_visualization.R")
+p
+
+
+```
+
+##### tMRCA - segment S (lower and upper band)
+
+
+```{r}
+#| label: tbl-tmrca-s
+#| tbl-cap: "Estimated time to Most Recent Common Ancestor for segment S, across various clock and coalescence models"
+#| echo: false
+#| message: false
+#| warning: false
+
+library(knitr)
+
+# 1. Load the updated extraction function
+source("scripts/extract_tmrca_crown_and_stem.R")
+
+# 2. Define the exact outbreak cluster
+outbreak_isolates <- c(
+  "PP_006WDKH.1",	
+  "PP_006WDJK.1",
+  "PP_006W6RC.2",
+  "PP_006WBLH.2",
+  "PP_006W3U9.2"
+)
+
+# 3. Extract BOTH dates directly from your specific folder structure
+
+# --- STRICT CLOCK ---
+dates_s_strict_none    <- extract_outbreak_dates("data/time_calibration/mol_clock/S_38seq_strict_none/timetree.nexus", outbreak_isolates)
+dates_s_strict_const   <- extract_outbreak_dates("data/time_calibration/mol_clock/S_38seq_strict_const/timetree.nexus", outbreak_isolates)
+dates_s_strict_skyline <- extract_outbreak_dates("data/time_calibration/mol_clock/S_38seq_strict_skyline/timetree.nexus", outbreak_isolates)
+
+# --- UNCORRELATED RELAXED ---
+dates_s_uncorr_none    <- extract_outbreak_dates("data/time_calibration/mol_clock/S_38seq_uncorr_none/timetree.nexus", outbreak_isolates)
+dates_s_uncorr_const   <- extract_outbreak_dates("data/time_calibration/mol_clock/S_38seq_uncorr_const/timetree.nexus", outbreak_isolates)
+dates_s_uncorr_skyline <- extract_outbreak_dates("data/time_calibration/mol_clock/S_38seq_uncorr_skyline/timetree.nexus", outbreak_isolates)
+
+# --- CORRELATED RELAXED ---
+dates_s_corr_none      <- extract_outbreak_dates("data/time_calibration/mol_clock/S_38seq_corr_none/timetree.nexus", outbreak_isolates)
+dates_s_corr_const     <- extract_outbreak_dates("data/time_calibration/mol_clock/S_38seq_corr_const/timetree.nexus", outbreak_isolates)
+dates_s_corr_skyline   <- extract_outbreak_dates("data/time_calibration/mol_clock/S_38seq_corr_skyline/timetree.nexus", outbreak_isolates)
+
+
+# 4. Build the master data frame with two distinct date columns
+tmrca_data_S <- data.frame(
+  `Clock Model` = c(
+    "Strict", "Strict", "Strict", 
+    "Uncorrelated Relaxed", "Uncorrelated Relaxed", "Uncorrelated Relaxed",
+    "Correlated Relaxed", "Correlated Relaxed", "Correlated Relaxed"
+  ),
+  `Coalescent Prior` = c(
+    "None", "Constant", "Skyline", 
+    "None", "Constant", "Skyline",
+    "None", "Constant", "Skyline"
+  ),
+  `Stem Date (Earliest possible)` = c(
+    dates_s_strict_none$Stem, dates_s_strict_const$Stem, dates_s_strict_skyline$Stem,
+    dates_s_uncorr_none$Stem, dates_s_uncorr_const$Stem, dates_s_uncorr_skyline$Stem,
+    dates_s_corr_none$Stem, dates_s_corr_const$Stem, dates_s_corr_skyline$Stem
+  ),
+  `Crown Date (Latest possible)` = c(
+    dates_s_strict_none$Crown, dates_s_strict_const$Crown, dates_s_strict_skyline$Crown,
+    dates_s_uncorr_none$Crown, dates_s_uncorr_const$Crown, dates_s_uncorr_skyline$Crown,
+    dates_s_corr_none$Crown, dates_s_corr_const$Crown, dates_s_corr_skyline$Crown
+  )
+)
+
+# 5. Render the final HTML table
+kable(tmrca_data_S, caption = "Segment S: Outbreak Emergence Window Across Models", align = "llcc")
+
+
+```
+
+
+
+##### Time calibrated phylogeny and tMRCA - segment M
+
+```{r}
+#| label: fig-dated-phylogeny-M
+#| fig-cap: "Time Calibrated Phylogenetic Tree for segment M"
+#| echo: false
+#| message: false
+#| warning: false
+
+source("scripts/M_28seq_time_calibrated_phylogeny_visualization.R")
+p
+
+```
+
+
+##### tMRCA - segment M (lower and upper band)
+
+```{r}
+#| label: tbl-tmrca-M
+#| tbl-cap: "Estimated time to Most Recent Common Ancestor for segment M, across various clock and coalescence models"
+#| echo: false
+#| message: false
+#| warning: false
+
+library(knitr)
+
+# 1. Load the updated extraction function
+source("scripts/extract_tmrca_crown_and_stem.R")
+
+# 2. Define the exact outbreak cluster
+outbreak_isolates_M <- c(
+  "PP_006WDKH.1",	
+  "PP_006WDJK.1",
+  "PP_006W6RC.2",
+  "PP_006WBLH.2",
+  "PP_006W3U9.2"
+)
+
+# 3. Extract BOTH dates directly from your specific folder structure
+
+# --- STRICT CLOCK ---
+dates_strict_none    <- extract_outbreak_dates("data/time_calibration/mol_clock/M_28_strict_none/timetree.nexus", outbreak_isolates_M)
+dates_strict_const   <- extract_outbreak_dates("data/time_calibration/mol_clock/M_28_strict_const/timetree.nexus", outbreak_isolates_M)
+dates_strict_skyline <- extract_outbreak_dates("data/time_calibration/mol_clock/M_28_strict_skyline/timetree.nexus", outbreak_isolates_M)
+
+# --- UNCORRELATED RELAXED ---
+dates_uncorr_none    <- extract_outbreak_dates("data/time_calibration/mol_clock/M_28_uncorr_none/timetree.nexus", outbreak_isolates_M)
+dates_uncorr_const   <- extract_outbreak_dates("data/time_calibration/mol_clock/M_28_uncorr_const/timetree.nexus", outbreak_isolates_M)
+dates_uncorr_skyline <- extract_outbreak_dates("data/time_calibration/mol_clock/M_28_uncorr_skyline/timetree.nexus", outbreak_isolates_M)
+
+# --- CORRELATED RELAXED ---
+dates_corr_none      <- extract_outbreak_dates("data/time_calibration/mol_clock/M_28_corr_none/timetree.nexus", outbreak_isolates_M)
+dates_corr_const     <- extract_outbreak_dates("data/time_calibration/mol_clock/M_28_corr_const/timetree.nexus", outbreak_isolates_M)
+dates_corr_skyline   <- extract_outbreak_dates("data/time_calibration/mol_clock/M_28_corr_skyline/timetree.nexus", outbreak_isolates_M)
+
+
+# 4. Build the master data frame with two distinct date columns
+tmrca_data_M <- data.frame(
+  `Clock Model` = c(
+    "Strict", "Strict", "Strict", 
+    "Uncorrelated Relaxed", "Uncorrelated Relaxed", "Uncorrelated Relaxed",
+    "Correlated Relaxed", "Correlated Relaxed", "Correlated Relaxed"
+  ),
+  `Coalescent Prior` = c(
+    "None", "Constant", "Skyline", 
+    "None", "Constant", "Skyline",
+    "None", "Constant", "Skyline"
+  ),
+  `Stem Date (Earliest possible)` = c(
+    dates_strict_none$Stem, dates_strict_const$Stem, dates_strict_skyline$Stem,
+    dates_uncorr_none$Stem, dates_uncorr_const$Stem, dates_uncorr_skyline$Stem,
+    dates_corr_none$Stem, dates_corr_const$Stem, dates_corr_skyline$Stem
+  ),
+  `Crown Date (Latest possible)` = c(
+    dates_strict_none$Crown, dates_strict_const$Crown, dates_strict_skyline$Crown,
+    dates_uncorr_none$Crown, dates_uncorr_const$Crown, dates_uncorr_skyline$Crown,
+    dates_corr_none$Crown, dates_corr_const$Crown, dates_corr_skyline$Crown
+  )
+)
+
+# 5. Render the final HTML table
+kable(tmrca_data_M, caption = "Segment M: Outbreak Emergence Window Across Models", align = "llcc")
+
+
+
+```
+
+# Modelling person to person transmission 
+
+## Methods
+
+## Results
+
+
 
 ```{r}
 
-#source("scripts/outbreak_lineage_snp_analysis.R")
+library(TransPhylo)
 
+#date_m_uncorr_skyline <- extract_outbreak_tmrca("data/time_calibration/mol_clock/M_28_uncorr_skylin#e/timetree.nexus", outbreak_isolates_M)
 
 
 ```
+
+
 
 # Discussion
 
@@ -157,5 +601,20 @@ final_output
 9.  Katoh, K. 2002. “MAFFT: A Novel Method for Rapid Multiple Sequence Alignment Based on Fast Fourier Transform.” Nucleic Acids Research 30 (14): 3059–66. https://doi.org/10.1093/nar/gkf436.
 
 10. T.K.F. Wong, N. Ly-Trong, H. Ren, H. Banos, A.J. Roger, E. Susko, C. Bielow, N. De Maio, N. Goldman, M.W. Hahn, G. Huttley, R. Lanfear, B.Q. Minh (2025) IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models. Submitted, https://doi.org/10.32942/X2P62N.
+
+11. Hepojoki, Jussi & Strandin, Tomas & Lankinen, Hilkka & Vaheri, Antti. (2012). Hantavirus structure—Molecular interactions behind the scene. The Journal of general virology. 93. 1631-44. 10.1099/vir.0.042218-0. 
+
+12. Sudhir Kumar, Glen Stecher, Michael Suleski, Maxwell Sanderford, Sudip Sharma, Koichiro Tamura, MEGA12: Molecular Evolutionary Genetic Analysis Version 12 for Adaptive and Green Computing, Molecular Biology and Evolution, Volume 41, Issue 12, December 2024, msae263, https://doi.org/10.1093/molbev/msae263
+
+13. Pavel Sagulenko, Vadim Puller, Richard A Neher, TreeTime: Maximum-likelihood phylodynamic analysis, Virus Evolution, Volume 4, Issue 1, January 2018, vex042, https://doi.org/10.1093/ve/vex042
+
+14. Cadhla Ramsden, Fernando L. Melo, Luiz. M. Figueiredo, Edward C. Holmes, Paolo M.A. Zanotto, the VGDN Consortium, High Rates of Molecular Evolution in Hantaviruses, Molecular Biology and Evolution, Volume 25, Issue 7, July 2008, Pages 1488–1492, https://doi.org/10.1093/molbev/msn093
+
+15. 1. Martínez, V. P. et al. “Super-Spreaders” and Person-to-Person Transmission of Andes Virus in Argentina. N Engl J Med 383, 2230–2241 (2020).
+
+16. https://github.com/jasonandr/Andes-virus-epi/blob/master/Andes_transmission_draft_report_2026_05_21.pdf
+
+17. 1. Andes Virus Outbreak Working Group. Andes Hantavirus Outbreak on a Cruise Ship, 2026. N Engl J Med NEJMc2606496 (2026) doi:10.1056/NEJMc2606496.
+
 
 # Ackonowledgments

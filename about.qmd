@@ -1,9 +1,20 @@
 ---
-title: "About"
+title: "More information regarding outbreak"
 ---
 
-About this site
 
-```{r}
-1 + 1
-```
+
+[MV Hondius Hantavirus Outbreak Timeline — April–May 2026](https://anthavirustracker.com/timeline)
+
+https://github.com/kraemer-lab/Hondius_hantavirus_h2026/tree/main
+
+
+https://github.com/adityaaravind/andes-virus-assistant
+
+https://x.com/BogochIsaac/status/2056022145054982597/photo/1
+
+https://x.com/cylee_tw/status/2056051777238368750
+
+https://x.com/BarryHunt008/status/2055663589759836651/photo/1
+
+https://x.com/KappaDoodles/status/2055752182486434033
