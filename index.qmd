@@ -559,6 +559,8 @@ kable(tmrca_data_M, caption = "Segment M: Outbreak Emergence Window Across Model
 
 ```
 
+
+
 # Modelling person to person transmission 
 
 ## Methods
@@ -567,14 +569,29 @@ kable(tmrca_data_M, caption = "Segment M: Outbreak Emergence Window Across Model
 
 
 
+### Best fit model - segment M
+
+```{r}
+
+source("scripts/goodness_of_fit_coalescence_clock_model_combinations.R")
+print(model_comparison_M)
+print(p)
+
+```
+
+
 ```{r}
 
 library(TransPhylo)
 
-#date_m_uncorr_skyline <- extract_outbreak_tmrca("data/time_calibration/mol_clock/M_28_uncorr_skylin#e/timetree.nexus", outbreak_isolates_M)
+source("scripts/transphylo_m_uncorr_skyline.R)
 
+plot(med)
+plot(ttree, type = 'detailed', w.shape = w_shape, w.scale = w_scale)
+print(outbreak_infections)
 
 ```
+
 
 
 
